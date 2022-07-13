@@ -1,5 +1,7 @@
 import useFetch from "./useFetch";
 
+import { Link } from "react-router-dom";
+
 const CardList = (props) => {
   let url;
   if (props.searchValue !== null && props.searchValue !== undefined) {
@@ -12,14 +14,16 @@ const CardList = (props) => {
     <div className="card-list">
       {cardData &&
         cardData.map((card) => (
-          <div className="card" key={card.id}>
-            <img src={card.image} alt="thumbnail" />
-            <div className="title">
-              <p>{card.title}</p>
-              <span>Ranking: {card.ranking}</span>
+          <Link to={`/${card._id}`}>
+            <div className="card" key={card.id}>
+              <img src={card.image} alt="thumbnail" />
+              <div className="title">
+                <p>{card.title}</p>
+                <span>Ranking: {card.ranking}</span>
+              </div>
+              <span>Episodes: {card.episodes}</span>
             </div>
-            <span>Episodes: {card.episodes}</span>
-          </div>
+          </Link>
         ))}
     </div>
   );

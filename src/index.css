@@ -60,3 +60,25 @@
 .search input {
   width: 50%;
 }
+
+.detail-container {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.container-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 10px;
+}
+
+.container-text-space {
+  padding: 3px;
+}
+.container-text button {
+  width: 10%;
+  padding: 2px;
+  color: red;
+}
